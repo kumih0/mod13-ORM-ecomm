@@ -28,7 +28,7 @@ THEN I am able to successfully create, update, and delete data in my database
 ## Description
 
     I completed the all the models to match the following format:     
-    * `Category`
+* `Category`
 
   * `id`
 
@@ -133,6 +133,5 @@ THEN I am able to successfully create, update, and delete data in my database
     > **Note:** We were provided the insomnia import file to check routes from the instructional staff.
 
 ## Walk through Video
-
-
+https://drive.google.com/file/d/1zoiyKGs5gLSccBhWLC_6wDW8bgYkB2kz/view
 
