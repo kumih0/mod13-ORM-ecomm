@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
   // find all tags
   // be sure to include its associated Product data
   try {
-  const tagData = await Tag.findAll({
+  const tagData = await Tag.findAll({ //find all tags. access product through producttag model
     include: [{ model: Product, through: ProductTag, as: 'tag_products' }]
   });
   res.status(200).json(tagData);
@@ -20,10 +20,10 @@ router.get('/:id', async (req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
   try {
-  const tagData = await Tag.findByPk(req.params.id, {
+  const tagData = await Tag.findByPk(req.params.id, { //find by primary key. access product through producttag model
     include: [{ model: Product, through: ProductTag, as: 'tag_products' }]
   });
-  if (!tagData) {
+  if (!tagData) {//if no tag found with that id, 404 error
     res.status(404).json({ message: 'No tag found with that id!' });
     return;
   }
@@ -46,12 +46,12 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   // update a tag's name by its `id` value
 try {
-  const tagData = await Tag.update(req.body, {
+  const tagData = await Tag.update(req.body, { 
     where: {
       id: req.params.id,
     },
   });
-  if (!tagData) {
+  if (!tagData) {//if no tag found with that id, 404 error
     res.status(404).json({ message: 'No tag found with that id!' });
     return;
   }
@@ -69,7 +69,7 @@ try {
       id: req.params.id
     }
   });
-  if (!tagData) {
+  if (!tagData) {//if no tag found with that id, 404 error
     res.status(404).json({ message: 'No tag found with that id!' });
     return;
   }

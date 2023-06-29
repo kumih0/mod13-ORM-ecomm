@@ -35,7 +35,7 @@ Product.init(
         isNumeric:true
       }
     },
-    category_id: {
+    category_id: {//foreign key
       type: DataTypes.INTEGER,
       references:{
         model:'category',

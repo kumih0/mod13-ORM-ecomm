@@ -13,7 +13,7 @@ ProductTag.init(
       primaryKey:true,
       autoIncrement:true
     },
-    product_id:{
+    product_id:{//foreignkey
       type:DataTypes.INTEGER,
       references:{
         model:'product',
@@ -21,7 +21,7 @@ ProductTag.init(
         unique:false
     }
   },
-    tag_id:{
+    tag_id:{//foreignkey
       type:DataTypes.INTEGER,
       references:{
         model:'tag',
